@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="views\stylesheet.css">
+</head>
+<body id="url-shortener">
+    <h1>URL_SHORTENER</h1>
+    <% if(locals.id){ %>
+        <p>URL Generated: https://localhost:3001/url/<%= id %></p>
+    <% } %>
+
+    <div>
+        <form method="POST" action="/url">
+            <label>
+                Enter your original url
+            </label>
+            <input type="text" name="url" class="form-control">
+            <button type="submit" class="btn btn-primary mt-3">Generate</button>
+        </form>
+    </div>
+    <div>
+        <% if(locals.urls){ %>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>ShortID</th>
+                    <th>Redirect</th>
+                    <th>Clicks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% urls.forEach((url, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= url.shortid %></td>
+                    <td><%= url.redirecturl %></td>
+                    <td><%= url.visit_hist.length %></td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+        <% } %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="views\stylesheet.css">
+</head>
+<body id="signup">
+    <h1>SignUp</h1>
+    <form action="/user/signup" method="post">
+        <label>Full name</label>
+        <input type="text" required name="name" class="form-control">
+        <label>Email</label>
+        <input type="text" required name="email" class="form-control">
+        <label>Password</label>
+        <input type="text" required name="password" class="form-control">
+        <button type="submit" class="btn btn-primary mt-3">Sign Up</button>
+    </form>
+</body>
+</html>

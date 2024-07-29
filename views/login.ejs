@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="views\stylesheet.css">
+</head>
+<body id="login">
+    <h1>Login</h1>
+    <form action="/user/login" method="post">
+        <label>Email</label>
+        <input type="text" required name="email" class="form-control">
+        <label>Password</label>
+        <input type="text" required name="password" class="form-control">
+        <button type="submit" class="btn btn-primary mt-3">Login</button>
+    </form>
+</body>
+</html>
